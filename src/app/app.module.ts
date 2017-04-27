@@ -6,12 +6,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ProfileComponent } from './profile/profile.component';
+import { LikeDislikePhotoComponent } from './profile/like-dislike-photo/like-dislike-photo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
-    ProfileComponent
+    ProfileComponent,
+    LikeDislikePhotoComponent
   ],
   imports: [
     BrowserModule,
