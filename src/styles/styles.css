@@ -1,5 +1,5 @@
 /* Add your custom style modifications here */
 
-body {
-    color: blue
+.container {
+    width:100%;
 }

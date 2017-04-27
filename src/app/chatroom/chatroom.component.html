@@ -1,0 +1,22 @@
+<p>
+  chatroom works!
+</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="panel panel-primary">
+              <app-conversation [currentUserId]="currentUserId" [chatMessages]="chatroom.messages" *ngIf="chatroom != undefined"></app-conversation>
+
+              <div class="panel-footer">
+                  <div class="input-group">
+                      <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." [(ngModel)]="messageInput"/>
+                      <span class="input-group-btn">
+                          <button class="btn btn-warning btn-sm" id="btn-chat" (click)="addMessage($event)" >
+                              Send</button>
+                      </span>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </div>
+</div>             

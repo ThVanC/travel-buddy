@@ -6,6 +6,7 @@ import { LoginComponent } from './authentication/login/login.component'
 import { RegisterComponent } from './authentication/register/register.component'
 import { ProfileComponent } from './profile/profile.component'
 import { MatchesComponent } from './matches/matches.component'
+import { ChatroomComponent } from './chatroom/chatroom.component'
 import { LikeDislikePhotoComponent } from './profile/like-dislike-photo/like-dislike-photo.component'
 import { PhotoSelectionComponent } from './profile/photo-selection/photo-selection.component'
 import { AuthGuard } from './services/auth-guard.service'
@@ -45,7 +46,12 @@ const routes: Routes = [
       component: PhotoSelectionComponent,
       canActivate: [AuthGuard] 
     },
-
+    { 
+      path: 'chatroom/:id', 
+      component: ChatroomComponent,
+      canActivate: [AuthGuard] 
+    },
+    
     // otherwise redirect to home
     { 
       path: '**', 

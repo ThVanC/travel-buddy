@@ -19,6 +19,7 @@ import { AlertService } from './services/alert.service';
 import { AuthenticationService } from './services/authentication.service';
 import { UserService } from './services/user.service';
 import { PhotoService } from './services/photo.service';
+import { ChatService } from './services/chat.service';
 
 import { fakeBackendProvider } from './helpers/fake-backend';
 import { MockBackend, MockConnection } from '@angular/http/testing';
@@ -26,6 +27,8 @@ import { BaseRequestOptions } from '@angular/http';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MatchesComponent } from './matches/matches.component';
 import { PhotoSelectionComponent } from './profile/photo-selection/photo-selection.component';
+import { ChatroomComponent } from './chatroom/chatroom.component';
+import { ConversationComponent } from './chatroom/conversation/conversation.component';
 
 
 
@@ -40,7 +43,9 @@ import { PhotoSelectionComponent } from './profile/photo-selection/photo-selecti
     HomeComponent,
     NavbarComponent,
     MatchesComponent,
-    PhotoSelectionComponent
+    PhotoSelectionComponent,
+    ChatroomComponent,
+    ConversationComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +59,7 @@ import { PhotoSelectionComponent } from './profile/photo-selection/photo-selecti
     AuthenticationService,
     UserService,
     PhotoService,
+    ChatService,
 
     // providers used to create fake backend
     fakeBackendProvider,

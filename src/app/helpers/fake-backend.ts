@@ -1,6 +1,9 @@
 import { Http, BaseRequestOptions, Response, ResponseOptions, RequestMethod, XHRBackend, RequestOptions } from '@angular/http';
 import { MockBackend, MockConnection } from '@angular/http/testing';
 import { Photo } from '../models/photo';
+import { User } from '../models/user';
+import { ChatRoom } from '../models/chatroom';
+import { ChatMessage } from '../models/chatmessage';
  
 export function fakeBackendFactory(backend: MockBackend, options: BaseRequestOptions, realBackend: XHRBackend) {
     // array in local storage for registered users
@@ -16,6 +19,28 @@ export function fakeBackendFactory(backend: MockBackend, options: BaseRequestOpt
     localPhoto2.description = 'Second photo';
     photos.push(localPhoto);
     photos.push(localPhoto2);
+
+    let user: User = new User();
+    user.firstName = "Kurt"
+    user.id = 123;
+    let user2: User = new User();
+    user2.firstName = "Thomas"
+    user2.id = 1;
+    
+    let chatMessage1 : ChatMessage = new ChatMessage();
+    chatMessage1.message = "message 1"
+    chatMessage1.user = user;
+    let chatMessage2 : ChatMessage = new ChatMessage();
+    chatMessage2.message = "message 2"
+    chatMessage2.user = user2;
+    let chatMessage3 : ChatMessage = new ChatMessage();
+    chatMessage3.message = "message 3"
+    chatMessage3.user = user;
+    let localChatRoom : ChatRoom = new ChatRoom();
+    localChatRoom.chatroomId = 1;
+    localChatRoom.messages = [chatMessage1, chatMessage2, chatMessage3];
+
+    let chatrooms : ChatRoom[] = [localChatRoom];
 
     // configure fake backend
     backend.connections.subscribe((connection: MockConnection) => {
@@ -143,6 +168,22 @@ export function fakeBackendFactory(backend: MockBackend, options: BaseRequestOpt
 
             if (connection.request.url.startsWith('/api/photos') && connection.request.method === RequestMethod.Put) {
                 connection.mockRespond(new Response(new ResponseOptions({ status: 200, body: photos })));
+                return;
+            }
+
+            // get chatrooms
+            if (connection.request.url.startsWith('/api/chatroom/byUserId') && connection.request.method === RequestMethod.Get) {
+                connection.mockRespond(new Response(new ResponseOptions({ status: 200, body: chatrooms })));
+                return;
+            }
+
+            if (connection.request.url.startsWith('/api/chatroom') && connection.request.method === RequestMethod.Get) {
+                connection.mockRespond(new Response(new ResponseOptions({ status: 200, body: localChatRoom })));
+                return;
+            }
+
+            if (connection.request.url.startsWith('/api/chatroom') && connection.request.method === RequestMethod.Post) {
+                connection.mockRespond(new Response(new ResponseOptions({ status: 200, body: localChatRoom })));
                 return;
             }
  
