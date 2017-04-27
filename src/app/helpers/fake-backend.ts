@@ -21,11 +21,20 @@ export function fakeBackendFactory(backend: MockBackend, options: BaseRequestOpt
     photos.push(localPhoto2);
 
     let user: User = new User();
-    user.firstName = "Kurt"
+    user.firstName = "Kurt";
+    user.lastName = "Rogiers";
+    user.avatarUrl = "http://www.philippedraps.be/wp-content/uploads/2015/10/kurt-rogiers-close.png";
     user.id = 123;
     let user2: User = new User();
-    user2.firstName = "Thomas"
+    user2.firstName = "Thomas";
+    user2.lastName = "Van Cleemput";
+    user2.avatarUrl = "https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/8/005/049/301/1b54688.jpg";
     user2.id = 1;
+    let user3: User = new User();
+    user3.firstName = "Bart";
+    user3.lastName = "Vercruysse";
+    user3.avatarUrl = "http://ppw.kuleuven.be/clep/images/bart-simpson.jpg";
+    user3.id = 3;
     
     let chatMessage1 : ChatMessage = new ChatMessage();
     chatMessage1.message = "message 1"
@@ -36,10 +45,14 @@ export function fakeBackendFactory(backend: MockBackend, options: BaseRequestOpt
     let chatMessage3 : ChatMessage = new ChatMessage();
     chatMessage3.message = "message 3"
     chatMessage3.user = user;
+    let chatMessage4 : ChatMessage = new ChatMessage();
+    chatMessage4.message = "message 4"
+    chatMessage4.user = user3;
     let localChatRoom : ChatRoom = new ChatRoom();
     localChatRoom.chatroomId = 1;
     localChatRoom.name = "My first chatroom";
-    localChatRoom.messages = [chatMessage1, chatMessage2, chatMessage3];
+    localChatRoom.messages = [chatMessage1, chatMessage2, chatMessage3, chatMessage4];
+    localChatRoom.participants = [user, user2, user3];
 
     let chatrooms : ChatRoom[] = [localChatRoom];
 
