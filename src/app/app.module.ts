@@ -10,8 +10,8 @@ import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LikeDislikePhotoComponent } from './profile/like-dislike-photo/like-dislike-photo.component';
-import { RegisterComponent } from './register/register.component';
-import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './authentication/register/register.component';
+import { LoginComponent } from './authentication/login/login.component';
 import { AlertComponent } from './helpers/alert/alert.component';
 import { HomeComponent } from './home/home.component';
 
