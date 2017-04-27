@@ -25,7 +25,6 @@ import { MockBackend, MockConnection } from '@angular/http/testing';
 import { BaseRequestOptions } from '@angular/http';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MatchesComponent } from './matches/matches.component';
-import { CarouselComponent } from './helpers/carousel/carousel.component';
 import { PhotoSelectionComponent } from './profile/photo-selection/photo-selection.component';
 
 
@@ -41,7 +40,6 @@ import { PhotoSelectionComponent } from './profile/photo-selection/photo-selecti
     HomeComponent,
     NavbarComponent,
     MatchesComponent,
-    CarouselComponent,
     PhotoSelectionComponent
   ],
   imports: [
