@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, CanActivate } from '@angular/router';
 
-import { LandingPageComponent } from './landing-page/landing-page.component'
-
 import { HomeComponent } from './home/home.component'
 import { LoginComponent } from './authentication/login/login.component'
 import { RegisterComponent } from './authentication/register/register.component'
+import { ProfileComponent } from './profile/profile.component'
+import { MatchesComponent } from './matches/matches.component'
+import { LikeDislikePhotoComponent } from './profile/like-dislike-photo/like-dislike-photo.component'
 import { AuthGuard } from './services/auth-guard.service'
 
 
@@ -23,7 +24,22 @@ const routes: Routes = [
       path: 'register', 
       component: RegisterComponent 
     },
- 
+    { 
+      path: 'home', 
+      component: HomeComponent,
+      canActivate: [AuthGuard] 
+    },
+    { 
+      path: 'profile', 
+      component: ProfileComponent,
+      canActivate: [AuthGuard] 
+    },
+    { 
+      path: 'matches', 
+      component: MatchesComponent,
+      canActivate: [AuthGuard] 
+    },
+
     // otherwise redirect to home
     { 
       path: '**', 

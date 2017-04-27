@@ -7,7 +7,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LikeDislikePhotoComponent } from './profile/like-dislike-photo/like-dislike-photo.component';
 import { RegisterComponent } from './authentication/register/register.component';
@@ -23,19 +22,22 @@ import { UserService } from './services/user.service';
 import { fakeBackendProvider } from './helpers/fake-backend';
 import { MockBackend, MockConnection } from '@angular/http/testing';
 import { BaseRequestOptions } from '@angular/http';
+import { NavbarComponent } from './navbar/navbar.component';
+import { MatchesComponent } from './matches/matches.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LandingPageComponent,
     ProfileComponent,
     LikeDislikePhotoComponent,
     RegisterComponent,
     LoginComponent,
     AlertComponent,
-    HomeComponent
+    HomeComponent,
+    NavbarComponent,
+    MatchesComponent
   ],
   imports: [
     BrowserModule,
