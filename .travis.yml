@@ -24,4 +24,4 @@ deploy:
  skip_cleanup: true
  api-key:
   secure: $HEROKU_API_KEY
- app: blog-tvc      
+ app: tui-amigo      
