@@ -4,5 +4,5 @@
 
 <a *ngFor="let chatroom of chatrooms"
   [routerLink]="['/chatroom', chatroom.chatroomId]">
-  {{ chatroom.chatroomId }}
+  {{ chatroom.name }}
 </a>

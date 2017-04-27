@@ -1,11 +1,11 @@
-<p>
-  chatroom works!
+<p *ngIf="chatroom != undefined">
+  chatroom {{chatroom.name}}
 </p>
 <div class="container">
     <div class="row">
         <div class="col-md-5">
             <div class="panel panel-primary">
-              <app-conversation [currentUserId]="currentUserId" [chatMessages]="chatroom.messages" *ngIf="chatroom != undefined"></app-conversation>
+              <app-conversation [currentUserId]="currentUser.id" [chatMessages]="chatroom.messages" *ngIf="chatroom != undefined"></app-conversation>
 
               <div class="panel-footer">
                   <div class="input-group">

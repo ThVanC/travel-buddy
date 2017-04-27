@@ -38,6 +38,7 @@ export function fakeBackendFactory(backend: MockBackend, options: BaseRequestOpt
     chatMessage3.user = user;
     let localChatRoom : ChatRoom = new ChatRoom();
     localChatRoom.chatroomId = 1;
+    localChatRoom.name = "My first chatroom";
     localChatRoom.messages = [chatMessage1, chatMessage2, chatMessage3];
 
     let chatrooms : ChatRoom[] = [localChatRoom];

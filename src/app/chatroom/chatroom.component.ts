@@ -16,7 +16,7 @@ export class ChatroomComponent implements OnInit {
   loading: boolean = false;
   private sub: any;
   chatroomId: number;
-  currentUserId: number;
+  currentUser: User;
   messageInput: string;
 
   @Input() chatroom: ChatRoom;
@@ -28,8 +28,7 @@ export class ChatroomComponent implements OnInit {
       private authenticationService: AuthenticationService) { }
 
   ngOnInit() { 
-    this.currentUserId = this.authenticationService.getCurrentID();
-    console.log(this.currentUserId);
+    this.currentUser = this.authenticationService.getCurrentUser();
     this.sub = this.route.params.subscribe(params => {
        this.chatroomId = +params['id']; // (+) converts string 'id' to a number
     });
@@ -51,8 +50,7 @@ export class ChatroomComponent implements OnInit {
         () => {
           var messageToAdd = new ChatMessage();
           messageToAdd.message = this.messageInput;
-          messageToAdd.user = new User();
-          messageToAdd.user.id = this.authenticationService.getCurrentID();
+          messageToAdd.user = this.currentUser;
 
           this.chatroom.messages.push(
               messageToAdd

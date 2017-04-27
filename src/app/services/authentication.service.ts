@@ -27,6 +27,14 @@ export class AuthenticationService {
         }
         return 0
     }
+
+    getCurrentUser(): User {
+        if (localStorage.getItem('currentUser')) {
+            let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+            return currentUser;
+        }
+        return null
+    }
  
     logout() {
         // remove user from local storage to log user out
