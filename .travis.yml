@@ -18,3 +18,12 @@ notifications:
   email:
     on_failure: change
     on_success: change
+    
+before_deploy:
+- cd dist
+deploy:
+ provider: heroku
+ skip_cleanup: true
+ api-key:
+  secure: $HEROKU_API_KEY
+ app: blog-tvc      
