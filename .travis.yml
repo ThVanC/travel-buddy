@@ -14,7 +14,6 @@ before_script:
 script:
   - ng build
 
-
 notifications:
   email:
     on_failure: change
