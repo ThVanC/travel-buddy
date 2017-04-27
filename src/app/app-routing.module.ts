@@ -7,6 +7,7 @@ import { RegisterComponent } from './authentication/register/register.component'
 import { ProfileComponent } from './profile/profile.component'
 import { MatchesComponent } from './matches/matches.component'
 import { LikeDislikePhotoComponent } from './profile/like-dislike-photo/like-dislike-photo.component'
+import { PhotoSelectionComponent } from './profile/photo-selection/photo-selection.component'
 import { AuthGuard } from './services/auth-guard.service'
 
 
@@ -37,6 +38,11 @@ const routes: Routes = [
     { 
       path: 'matches', 
       component: MatchesComponent,
+      canActivate: [AuthGuard] 
+    },
+    { 
+      path: 'photoselection', 
+      component: PhotoSelectionComponent,
       canActivate: [AuthGuard] 
     },
 

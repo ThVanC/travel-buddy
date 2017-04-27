@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Photo } from '../../models/photo';
 
 @Component({
   selector: 'app-like-dislike-photo',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LikeDislikePhotoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
+
+  @Input() photo : Photo; 
+  @Output() likes = new EventEmitter<boolean>();
 
   ngOnInit() {
+    //this.router.navigate(["home"]);
+  }
+
+  like(): void{
+    this.likes.emit(true);
+  }
+
+  dislike(): void{
+    this.likes.emit(false);
   }
 
 }

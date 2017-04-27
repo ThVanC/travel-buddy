@@ -1,0 +1,7 @@
+<p>
+  photo-selection works!
+</p>
+
+<div>
+  <app-like-dislike-photo [photo]="currentPhoto" (likes)="handleLikeOrDislike($event)" *ngIf="selectionProcedureOnGoing && currentPhoto != undefined"></app-like-dislike-photo>
+</div>

@@ -1,10 +1,22 @@
 import { Http, BaseRequestOptions, Response, ResponseOptions, RequestMethod, XHRBackend, RequestOptions } from '@angular/http';
 import { MockBackend, MockConnection } from '@angular/http/testing';
+import { Photo } from '../models/photo';
  
 export function fakeBackendFactory(backend: MockBackend, options: BaseRequestOptions, realBackend: XHRBackend) {
     // array in local storage for registered users
     let users: any[] = JSON.parse(localStorage.getItem('users')) || [];
- 
+    let photos : Photo[] = [];
+    let localPhoto : Photo = new Photo();
+    localPhoto.id = 1;
+    localPhoto.url = 'https://www.scandichotels.com/imagevault/publishedmedia/xkaq3p1plwnad4vbncw8/4588752-bergen-at-night_by_Buckley.jpg';
+    localPhoto.description = 'first photo';
+    let localPhoto2: Photo = new Photo();
+    localPhoto2.id = 2;
+    localPhoto2.url = 'http://fjordtours.blob.core.windows.net/fjordtours-umbraco/1178/bryggen-girish-chouhan-visitbergen_com.jpg';
+    localPhoto2.description = 'Second photo';
+    photos.push(localPhoto);
+    photos.push(localPhoto2);
+
     // configure fake backend
     backend.connections.subscribe((connection: MockConnection) => {
         // wrap in timeout to simulate server api call
@@ -120,6 +132,17 @@ export function fakeBackendFactory(backend: MockBackend, options: BaseRequestOpt
                     connection.mockRespond(new Response(new ResponseOptions({ status: 401 })));
                 }
  
+                return;
+            }
+
+            // get photos
+            if (connection.request.url.endsWith('/api/photos') && connection.request.method === RequestMethod.Get) {
+                connection.mockRespond(new Response(new ResponseOptions({ status: 200, body: photos })));
+                return;
+            }
+
+            if (connection.request.url.startsWith('/api/photos') && connection.request.method === RequestMethod.Put) {
+                connection.mockRespond(new Response(new ResponseOptions({ status: 200, body: photos })));
                 return;
             }
  

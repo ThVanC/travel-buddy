@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
+import { User } from '../models/user';
 import 'rxjs/add/operator/map'
  
 @Injectable()
@@ -18,6 +19,14 @@ export class AuthenticationService {
                 }
             });
     }
+
+    getCurrentID(): number{
+        if (localStorage.getItem('currentUser')) {
+            let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+            return currentUser.id;
+        }
+        return 0
+    }
  
     logout() {
         // remove user from local storage to log user out

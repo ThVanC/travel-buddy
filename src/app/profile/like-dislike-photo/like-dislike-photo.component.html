@@ -1,3 +1,7 @@
-<p>
-  like-dislike-photo works!
-</p>
+<div>
+  <p>Description is {{photo.description}}</p>
+  <p>id is {{photo.id}}</p>
+  <img src="{{photo.url}}"/>
+  <button (click)="like()" class="btn btn--primary" >Like photo</button>
+  <button (click)="dislike()" class="btn btn--primary" >Dislike photo</button>
+</div>
