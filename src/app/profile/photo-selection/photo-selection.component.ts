@@ -33,7 +33,6 @@ export class PhotoSelectionComponent implements OnInit {
                 this.alertService.success('No photo\'s found. Please try again later.', true);
                 this.selectionProcedureOnGoing = false;
                } else {
-                 this.alertService.success('Photos found', true);
                 this.currentPhoto = this.photos[this.index];
                 this.selectionProcedureOnGoing = true;
                }
@@ -50,7 +49,6 @@ export class PhotoSelectionComponent implements OnInit {
     this.photoService.UpdateById(this.currentPhoto.id, this.authenticationService.getCurrentID(), likeCurrentPhoto)
     .subscribe(
       () => {
-        this.alertService.success('Photo is updated', true);
         this.showNextPhotoIfPossible();
       },
       error => {
