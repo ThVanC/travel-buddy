@@ -46,3 +46,7 @@ body{
 a,a:hover {
   color: white;
 }
+.btn-primary{
+  background-color:#092a5E;
+  border-radius: 0px;
+}
