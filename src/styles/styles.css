@@ -1,5 +1,40 @@
 /* Add your custom style modifications here */
+@import "creative.min.css";
+
+body{
+    height:100%;
+    background-color: #70cbf4;
+}
 
 .container {
     width:100%;
+}
+
+.navbar-default .navbar-header .navbar-brand {
+    color: #F05F40;
+}
+
+.navbar-default .nav>li>a, .navbar-default .nav>li>a:focus {
+    color: #F05F40;
+}
+
+#footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  height: 20px;
+  background: #222;
+  color: white;
+}
+
+#content {
+  margin-top: 20px;
+  height: 100%;
+  background-color: #70cbf4;
+  color:white;
+}
+
+#content h1, #content h3{
+    color:white;
 }

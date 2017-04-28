@@ -4,8 +4,8 @@ import { Router } from '@angular/router';
 import { AlertService } from '../../services/alert.service';
 import { UserService } from '../../services/user.service';
 
-import datetimepicker from 'eonasdan-bootstrap-datetimepicker';
-import moment from 'moment';
+import {Datetimepicker} from 'eonasdan-bootstrap-datetimepicker';
+import {Moment} from 'moment';
  
 @Component({
     moduleId: module.id,
@@ -15,7 +15,7 @@ import moment from 'moment';
 export class RegisterComponent {
     model: any = {};
     loading = false;
-    date: moment.Moment;
+    date: Moment;
  
     constructor(
         private router: Router,
@@ -50,7 +50,7 @@ export class RegisterComponent {
     };
 
     addTime(val, selector) {
-        this.date = moment(this.date.add(val, selector));
+        //this.date = new Moment(this.date.add(val, selector));
     };
 
     clearTime() {
