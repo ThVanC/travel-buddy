@@ -6,5 +6,8 @@ export class User {
     lastName: string;
     avatarUrl: string;
     gender: string;
+    address: string;
+    city: string;
+    zipcode: string;
     birthday: Date;
 }

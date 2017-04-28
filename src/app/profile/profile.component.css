@@ -78,4 +78,20 @@ span.tags
     left: 50%;
     margin-left: -10px;
     z-index: 10;
-    }
+}
+
+.well.profile {
+    /*background-color: #c2e6fa;*/
+    background-color: #70cbf4;
+    border: none;
+    margin-left:auto;
+    margin-right:auto;
+    /*color: #092a5e !important;*/
+}
+
+.well.profile input[type="text"], .well.profile textarea {
+
+  background-color : #fff;
+  border:none;
+
+}

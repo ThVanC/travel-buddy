@@ -70,3 +70,11 @@
 .chat-message{
     min-height: 70px;
 }
+
+.chat-messages .chat-message strong{
+    color: #555;
+}
+
+.message-sender{
+    color: #555;
+}

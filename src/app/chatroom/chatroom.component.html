@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row panel panel-primary chatheader">
         <template ngFor let-participant [ngForOf]="chatroom.participants" *ngIf="chatroom != undefined">
-            <div class="col-md-4 center-block centered">
+            <div class="col-md-4 center-block centered chat-centered">
                 <img class="media-object dp img-circle centered" src="{{participant.avatarUrl}}" style="width: 100px;height:100px;">
                 <div class="media-body centered">
                     <h4 class="media-heading">{{participant.firstName}} <small> {{participant.lastName}}</small></h4>

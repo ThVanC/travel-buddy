@@ -16,7 +16,7 @@ export class PhotoSelectionComponent implements OnInit {
   selectionProcedureOnGoing : boolean = true;
   photos: Photo[];
   currentPhoto: Photo;
-  index: number = 0;
+  index: number;
 
   constructor(
       private router: Router,
@@ -26,6 +26,7 @@ export class PhotoSelectionComponent implements OnInit {
 
   ngOnInit() {
     this.loading = true;
+    this.index = 0,
     this.photoService.getAll()
         .subscribe(
             photos => {
