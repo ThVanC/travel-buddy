@@ -17,7 +17,7 @@ export function fakeBackendFactory(backend: MockBackend, options: BaseRequestOpt
 
     let localPhoto2: Photo = new Photo();
     localPhoto2.id = 2;
-    localPhoto2.url = '../img/photo1.jpeg';
+    localPhoto2.url = '../img/photo2.jpeg';
     localPhoto2.description = 'Second photo';
 
     let localPhoto3: Photo = new Photo();

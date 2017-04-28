@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, CanActivate } from '@angular/router';
 
+import {LandingScreenComponent} from './landing-screen/landing-screen.component'
 import { HomeComponent } from './home/home.component'
 import { LoginComponent } from './authentication/login/login.component'
 import { RegisterComponent } from './authentication/register/register.component'
@@ -14,59 +15,63 @@ import { AuthGuard } from './services/auth-guard.service'
 
 
 const routes: Routes = [
-    { 
-      path: '', 
-      component: HomeComponent, 
-      canActivate: [AuthGuard] 
-    },
-    { 
-      path: 'login', 
-      component: LoginComponent 
-    },
-    { 
-      path: 'register', 
-      component: RegisterComponent 
-    },
-    { 
-      path: 'home', 
+    {
+      path: '',
       component: HomeComponent,
-      canActivate: [AuthGuard] 
+      canActivate: [AuthGuard]
     },
-    { 
-      path: 'profile/:id', 
+    {
+        path: 'landingScreen',
+        component: LandingScreenComponent
+    },
+    {
+      path: 'login',
+      component: LoginComponent
+    },
+    {
+      path: 'register',
+      component: RegisterComponent
+    },
+    {
+      path: 'home',
+      component: HomeComponent,
+      canActivate: [AuthGuard]
+    },
+    {
+      path: 'profile/:id',
       component: ProfileComponent,
-      canActivate: [AuthGuard] 
+      canActivate: [AuthGuard]
     },
-    { 
-      path: 'profile', 
+    {
+      path: 'profile',
       component: ProfileComponent,
-      canActivate: [AuthGuard] 
+      canActivate: [AuthGuard]
     },
-    { 
-      path: 'profileForm', 
+    {
+      path: 'profileForm',
       component: GeneralProfileInfoComponent,
-      canActivate: [AuthGuard] 
+      canActivate: [AuthGuard]
     },
-    { 
-      path: 'matches', 
+    {
+      path: 'matches',
       component: MatchesComponent,
-      canActivate: [AuthGuard] 
+      canActivate: [AuthGuard]
     },
-    { 
-      path: 'photoselection', 
+    {
+      path: 'photoselection',
       component: PhotoSelectionComponent,
-      canActivate: [AuthGuard] 
+      canActivate: [AuthGuard]
     },
-    { 
-      path: 'chatroom/:id', 
+    {
+      path: 'chatroom/:id',
       component: ChatroomComponent,
-      canActivate: [AuthGuard] 
+      canActivate: [AuthGuard]
     },
-    
+
     // otherwise redirect to home
-    { 
-      path: '**', 
-      redirectTo: '' 
+    {
+      path: '**',
+      redirectTo: ''
     }
 ];
 @NgModule({

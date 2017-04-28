@@ -30,6 +30,7 @@ import { PhotoSelectionComponent } from './profile/photo-selection/photo-selecti
 import { ChatroomComponent } from './chatroom/chatroom.component';
 import { ConversationComponent } from './chatroom/conversation/conversation.component';
 import { GeneralProfileInfoComponent } from './profile/general-profile-info/general-profile-info.component';
+import { LandingScreenComponent } from './landing-screen/landing-screen.component';
 
 
 
@@ -47,7 +48,8 @@ import { GeneralProfileInfoComponent } from './profile/general-profile-info/gene
     PhotoSelectionComponent,
     ChatroomComponent,
     ConversationComponent,
-    GeneralProfileInfoComponent
+    GeneralProfileInfoComponent,
+    LandingScreenComponent
   ],
   imports: [
     BrowserModule,
