@@ -9,16 +9,67 @@ export function fakeBackendFactory(backend: MockBackend, options: BaseRequestOpt
     // array in local storage for registered users
     let users: any[] = JSON.parse(localStorage.getItem('users')) || [];
     let photos : Photo[] = [];
+
     let localPhoto : Photo = new Photo();
     localPhoto.id = 1;
-    localPhoto.url = 'https://www.scandichotels.com/imagevault/publishedmedia/xkaq3p1plwnad4vbncw8/4588752-bergen-at-night_by_Buckley.jpg';
+    localPhoto.url = '../img/photo1.jpeg';
     localPhoto.description = 'first photo';
+
     let localPhoto2: Photo = new Photo();
     localPhoto2.id = 2;
-    localPhoto2.url = 'http://fjordtours.blob.core.windows.net/fjordtours-umbraco/1178/bryggen-girish-chouhan-visitbergen_com.jpg';
+    localPhoto2.url = '../img/photo1.jpeg';
     localPhoto2.description = 'Second photo';
+
+    let localPhoto3: Photo = new Photo();
+    localPhoto3.id = 2;
+    localPhoto3.url = '../img/photo3.jpeg';
+    localPhoto3.description = 'Second photo';
+
+    let localPhoto4: Photo = new Photo();
+    localPhoto4.id = 2;
+    localPhoto4.url = '../img/photo4.jpeg';
+    localPhoto4.description = 'Second photo';
+
+    let localPhoto5: Photo = new Photo();
+    localPhoto5.id = 2;
+    localPhoto5.url = '../img/photo5.jpeg';
+    localPhoto5.description = 'Second photo';
+
+    let localPhoto6: Photo = new Photo();
+    localPhoto6.id = 2;
+    localPhoto6.url = '../img/photo6.jpeg';
+    localPhoto6.description = 'Second photo';
+
+    let localPhoto7: Photo = new Photo();
+    localPhoto7.id = 2;
+    localPhoto7.url = '../img/photo7.jpeg';
+    localPhoto7.description = 'Second photo';
+
+    let localPhoto8: Photo = new Photo();
+    localPhoto8.id = 2;
+    localPhoto8.url = '../img/photo8.jpeg';
+    localPhoto8.description = 'Second photo';
+
+    let localPhoto9: Photo = new Photo();
+    localPhoto9.id = 2;
+    localPhoto9.url = '../img/photo9.jpeg';
+    localPhoto9.description = 'Second photo';
+
+    let localPhoto10: Photo = new Photo();
+    localPhoto10.id = 2;
+    localPhoto10.url = '../img/photo10.jpeg';
+    localPhoto10.description = 'Second photo';
+
     photos.push(localPhoto);
     photos.push(localPhoto2);
+    photos.push(localPhoto3);
+    photos.push(localPhoto4);
+    photos.push(localPhoto5);
+    photos.push(localPhoto6);
+    photos.push(localPhoto7);
+    photos.push(localPhoto8);
+    photos.push(localPhoto9);
+    photos.push(localPhoto10);
 
     let user: User = new User();
     user.firstName = "Kurt";

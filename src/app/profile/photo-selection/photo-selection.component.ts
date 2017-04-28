@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { PhotoService } from '../../services/photo.service';
 import { AlertService } from '../../services/alert.service';
 import { AuthenticationService } from '../../services/authentication.service';
@@ -18,6 +19,7 @@ export class PhotoSelectionComponent implements OnInit {
   index: number = 0;
 
   constructor(
+      private router: Router,
       private photoService: PhotoService,
       private alertService: AlertService,
       private authenticationService: AuthenticationService) { }
@@ -64,6 +66,7 @@ export class PhotoSelectionComponent implements OnInit {
       this.currentPhoto = this.photos[this.index];
     } else {
       this.selectionProcedureOnGoing = false;
+      this.router.navigate(['/profile']);
     }
   }
 
