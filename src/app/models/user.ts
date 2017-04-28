@@ -5,4 +5,6 @@ export class User {
     firstName: string;
     lastName: string;
     avatarUrl: string;
+    gender: string;
+    birthday: Date;
 }

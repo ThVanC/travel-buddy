@@ -22,7 +22,9 @@
         "../node_modules/bootstrap/dist/css/bootstrap.min.css",
         "styles.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "https://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/4.17.43/build/css/bootstrap-datetimepicker.min.css"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

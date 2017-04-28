@@ -20,12 +20,16 @@ export class UserService {
     }
  
     update(user: User) {
-        return this.http.put('/api/users/' + user.id, user, this.jwt()).map((response: Response) => response.json());
+        return this.http.put('/api/users' , user, this.jwt()).map((response: Response) => response.json());
     }
  
     delete(id: number) {
         return this.http.delete('/api/users/' + id, this.jwt()).map((response: Response) => response.json());
     }
+
+    isProfileComplete(id: number){
+        return this.http.get('/api/users/isProfileComplete/' + id, this.jwt()).map((response: Response) => response.json());
+    }
  
     // private helper methods
  

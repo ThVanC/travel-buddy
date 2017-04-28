@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component'
 import { LoginComponent } from './authentication/login/login.component'
 import { RegisterComponent } from './authentication/register/register.component'
 import { ProfileComponent } from './profile/profile.component'
+import { GeneralProfileInfoComponent } from './profile/general-profile-info/general-profile-info.component'
 import { MatchesComponent } from './matches/matches.component'
 import { ChatroomComponent } from './chatroom/chatroom.component'
 import { LikeDislikePhotoComponent } from './profile/like-dislike-photo/like-dislike-photo.component'
@@ -32,8 +33,18 @@ const routes: Routes = [
       canActivate: [AuthGuard] 
     },
     { 
+      path: 'profile/:id', 
+      component: ProfileComponent,
+      canActivate: [AuthGuard] 
+    },
+    { 
       path: 'profile', 
       component: ProfileComponent,
+      canActivate: [AuthGuard] 
+    },
+    { 
+      path: 'profileForm', 
+      component: GeneralProfileInfoComponent,
       canActivate: [AuthGuard] 
     },
     { 

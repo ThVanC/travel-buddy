@@ -29,6 +29,7 @@ import { MatchesComponent } from './matches/matches.component';
 import { PhotoSelectionComponent } from './profile/photo-selection/photo-selection.component';
 import { ChatroomComponent } from './chatroom/chatroom.component';
 import { ConversationComponent } from './chatroom/conversation/conversation.component';
+import { GeneralProfileInfoComponent } from './profile/general-profile-info/general-profile-info.component';
 
 
 
@@ -45,7 +46,8 @@ import { ConversationComponent } from './chatroom/conversation/conversation.comp
     MatchesComponent,
     PhotoSelectionComponent,
     ChatroomComponent,
-    ConversationComponent
+    ConversationComponent,
+    GeneralProfileInfoComponent
   ],
   imports: [
     BrowserModule,

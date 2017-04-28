@@ -11,6 +11,28 @@
             <input type="text" class="form-control" name="lastName" [(ngModel)]="model.lastName" #lastName="ngModel" required />
             <div *ngIf="f.submitted && !lastName.valid" class="help-block">Last Name is required</div>
         </div>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !gender.valid }">
+            <label for="gender">Gender</label>
+            <select name="gender" [(ngModel)]="model.gender" #gender="ngModel" required> // value is a string or number
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <div *ngIf="f.submitted && !gender.valid" class="help-block">Gender is required</div>
+        </div>
+        
+        <div class="form-group">
+            <div class="input-group">
+                <input class="form-control" 
+                a2e-datetimepicker
+                [date]="date"
+                [options]="a2eOptions"
+                (onChange)="dateChange($event)"
+                (onClick)="dateClick()"
+                />
+                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+            </div>
+        </div>
+
         <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
             <label for="username">Username</label>
             <input type="text" class="form-control" name="username" [(ngModel)]="model.username" #username="ngModel" required />
