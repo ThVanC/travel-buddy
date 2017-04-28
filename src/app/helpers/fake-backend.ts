@@ -86,7 +86,7 @@ export function fakeBackendFactory(backend: MockBackend, options: BaseRequestOpt
     user3.lastName = "Vercruysse";
     user3.avatarUrl = "http://ppw.kuleuven.be/clep/images/bart-simpson.jpg";
     user3.id = 3;
-    
+
     let chatMessage1 : ChatMessage = new ChatMessage();
     chatMessage1.message = "message 1"
     chatMessage1.user = user;
@@ -101,7 +101,7 @@ export function fakeBackendFactory(backend: MockBackend, options: BaseRequestOpt
     chatMessage4.user = user3;
     let localChatRoom : ChatRoom = new ChatRoom();
     localChatRoom.chatroomId = 1;
-    localChatRoom.name = "My first chatroom";
+    localChatRoom.name = "Amigo's going to ibiza!";
     localChatRoom.messages = [chatMessage1, chatMessage2, chatMessage3, chatMessage4];
     localChatRoom.participants = [user, user2, user3];
 

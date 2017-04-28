@@ -1,8 +1,16 @@
-<p>
-  matches works!
-</p>
-
-<a *ngFor="let chatroom of chatrooms"
-  [routerLink]="['/chatroom', chatroom.chatroomId]">
-  {{ chatroom.name }}
-</a>
+<div class="matches-component">
+<div class="row">
+  <template ngFor let-chatroom [ngForOf]="chatrooms">
+    <div class="col-sm-12">
+      <a [routerLink]="['/chatroom', chatroom.chatroomId]">
+        <div class="card">
+          <img class="card-img-top img-responsive" src="../img/photo17.jpeg" alt="Card image cap">
+          <div class="card-block">
+            <p class="card-text">{{ chatroom.name }}</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </template>
+</div>
+</div>

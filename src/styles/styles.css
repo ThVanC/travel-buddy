@@ -11,11 +11,15 @@ body{
 }
 
 .navbar-default .navbar-header .navbar-brand {
-    color: #F05F40;
+    color: white;
+/*  font-color:white;*/
 }
-
+.navbar-default .navbar-header .navbar-brand a:hover {
+  color: white;
+  /*  font-color:white;*/
+}
 .navbar-default .nav>li>a, .navbar-default .nav>li>a:focus {
-    color: #F05F40;
+    color: white;
 }
 
 #footer {
@@ -37,4 +41,8 @@ body{
 
 #content h1, #content h3{
     color:white;
+}
+
+a,a:hover {
+  color: white;
 }
